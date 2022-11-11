@@ -2,7 +2,7 @@
 - 빌드 방법 : `./gradlew buildPlugin`  
 ![img.png](images/build_plugin.png)
 
-- 빌드 결과물 : `build/distributions/xxx.zip`
+- 빌드 결과물 : `build/distributions/xxx.zip`  
 ![img.png](images/build_result.png)
 
 ## 설치 방법
@@ -11,11 +11,11 @@
 - 빌드 결과물인 zip 파일 선택
 
 ## 사용 방법
-- 추가하려는 Page 위치에서 우클릭 후, Generate Page 선택
+- 추가하려는 Page 위치에서 우클릭 후, Generate Page 선택  
 ![img.png](images/generate_page_action.png)
 
 - Dialog 정보 입력  
-  - ![img.png](images/dialog.png) 
+![img.png](images/dialog.png) 
   - 페이지 이름 입력
     - `TestCall`, `test_call`, `testCall` 형태로 입력 가능
   - BaseBloc 토글
