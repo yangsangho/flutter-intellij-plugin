@@ -1,0 +1,2 @@
+export '${page_snake_case}_page.dart';
+export '${page_snake_case}_view.dart';

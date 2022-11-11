@@ -1,0 +1,32 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:pawdly_ui/pawdly_ui.dart';
+
+import '../${page_snake_case}.dart';
+
+class ${page_pascal_case}Page extends StatelessWidget {
+  const ${page_pascal_case}Page._({Key? key}) : super(key: key);
+
+  static String get _routePath => '/$${page_pascal_case}Page';
+
+  static GoRoute get route => GoRoute(
+        path: _routePath,
+        builder: (context, state) => const ${page_pascal_case}Page._(),
+      );
+
+  static void push(BuildContext context) => context.push(_routePath);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => ${page_pascal_case}Bloc(),
+      child: BlocProgress<${page_pascal_case}Bloc, ${page_pascal_case}State, ${page_pascal_case}Event>(
+        builder: (context, state) => const Scaffold(
+          appBar: PawdlyAppBar(title: ''),
+          body: ${page_pascal_case}View(),
+        ),
+      ),
+    );
+  }
+}

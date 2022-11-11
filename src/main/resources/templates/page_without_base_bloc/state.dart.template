@@ -1,0 +1,8 @@
+part of '${page_snake_case}_bloc.dart';
+
+class ${page_pascal_case}State extends Equatable {
+  const ${page_pascal_case}State();
+
+  @override
+  List<Object?> get props => [];
+}

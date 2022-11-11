@@ -1,0 +1,13 @@
+import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+part '${page_snake_case}_event.dart';
+part '${page_snake_case}_state.dart';
+
+typedef ${page_pascal_case}Emit = Emitter<${page_pascal_case}State>;
+
+class ${page_pascal_case}Bloc extends Bloc<${page_pascal_case}Event, ${page_pascal_case}State> {
+  ${page_pascal_case}Bloc() : super(const ${page_pascal_case}State()) {
+    on<${page_pascal_case}Event>((event, emit) {});
+  }
+}
