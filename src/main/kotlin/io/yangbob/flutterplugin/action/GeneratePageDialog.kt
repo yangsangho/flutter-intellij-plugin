@@ -1,4 +1,4 @@
-package com.pawdlers.pawdlersflutterplugin.action
+package io.yangbob.flutterplugin.action
 
 import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.ui.dsl.builder.bindSelected

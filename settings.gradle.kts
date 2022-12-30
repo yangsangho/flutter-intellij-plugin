@@ -1,1 +1,1 @@
-rootProject.name = "pawdlers-flutter-plugin"
+rootProject.name = "yangbob-flutter-plugin"

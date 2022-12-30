@@ -4,7 +4,7 @@ plugins {
     id("org.jetbrains.intellij") version "1.6.0"
 }
 
-group = "com.pawdlers"
+group = "io.yangbob"
 version = "1.0-SNAPSHOT"
 
 repositories {

@@ -1,4 +1,4 @@
-package com.pawdlers.pawdlersflutterplugin.action
+package io.yangbob.flutterplugin.action
 
 import com.fleshgrinder.extensions.kotlin.toLowerSnakeCase
 import com.intellij.openapi.actionSystem.*
@@ -9,8 +9,8 @@ import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiDocumentManager
 import com.intellij.psi.PsiFileFactory
-import com.pawdlers.pawdlersflutterplugin.generator.PageGenerator
-import com.pawdlers.pawdlersflutterplugin.generator.PageGeneratorFactory
+import io.yangbob.flutterplugin.generator.BasePageGenerator
+import io.yangbob.flutterplugin.generator.PageGeneratorFactory
 
 class GeneratePage : AnAction(), GeneratePageDialog.Listener {
     private lateinit var dataContext: DataContext
@@ -35,7 +35,7 @@ class GeneratePage : AnAction(), GeneratePageDialog.Listener {
         }
     }
 
-    private fun generate(name: String, mainSourceGenerators: List<PageGenerator>) {
+    private fun generate(name: String, mainSourceGenerators: List<BasePageGenerator>) {
         val project = CommonDataKeys.PROJECT.getData(dataContext)
         val view = LangDataKeys.IDE_VIEW.getData(dataContext)
         val directory = view?.orChooseDirectory
@@ -51,7 +51,7 @@ class GeneratePage : AnAction(), GeneratePageDialog.Listener {
         }
     }
 
-    private fun createSourceFile(project: Project, generator: PageGenerator, directory: PsiDirectory) {
+    private fun createSourceFile(project: Project, generator: BasePageGenerator, directory: PsiDirectory) {
         val dir = createDir(generator.dirName(), directory)
 
         val fileName = generator.fileName()

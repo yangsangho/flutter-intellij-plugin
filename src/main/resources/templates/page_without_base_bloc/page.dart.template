@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../${page_snake_case}.dart';
 
 class ${page_pascal_case}Page extends StatelessWidget {
-  const ${page_pascal_case}Page._({super.key});
+  const ${page_pascal_case}Page({super.key});
 
   @override
   Widget build(BuildContext context) {
