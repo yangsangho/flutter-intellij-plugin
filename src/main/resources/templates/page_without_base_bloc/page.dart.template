@@ -1,28 +1,18 @@
+import 'package:chk_design_system/chk_design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'package:pawdly_ui/pawdly_ui.dart';
 
 import '../${page_snake_case}.dart';
 
 class ${page_pascal_case}Page extends StatelessWidget {
-  const ${page_pascal_case}Page._({Key? key}) : super(key: key);
-
-  static String get _routePath => '/$${page_pascal_case}Page';
-
-  static GoRoute get route => GoRoute(
-        path: _routePath,
-        builder: (context, state) => const ${page_pascal_case}Page._(),
-      );
-
-  static void push(BuildContext context) => context.push(_routePath);
+  const ${page_pascal_case}Page._({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => ${page_pascal_case}Bloc(),
       child: const Scaffold(
-        appBar: PawdlyAppBar(title: ''),
+        appBar: ChkFixedAppBar(title: ''),
         body: ${page_pascal_case}View(),
       ),
     );

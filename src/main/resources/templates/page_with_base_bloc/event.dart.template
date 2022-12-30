@@ -1,10 +1,8 @@
 part of '${page_snake_case}_bloc.dart';
 
-abstract class ${page_pascal_case}Event extends Equatable {
+@immutable
+abstract class ${page_pascal_case}Event {
   const ${page_pascal_case}Event();
-
-  @override
-  List<Object> get props => [];
 }
 
 class Initialize extends ${page_pascal_case}Event {

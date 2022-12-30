@@ -2,21 +2,27 @@ part of '${page_snake_case}_bloc.dart';
 
 class ${page_pascal_case}State extends BaseState {
   const ${page_pascal_case}State({
-    PageStatus pageStatus = PageStatus.notInitialized,
-  }) : super(pageStatus: pageStatus);
+    super.pageStatus = PageStatus.notInitialized,
+    super.finishWithErrorMsg,
+  });
 
   @override
   List<Object?> get props => super.props..addAll([]);
 
   ${page_pascal_case}State copyWith({
     PageStatus? pageStatus,
+    String? finishWithErrorMsg,
   }) {
     return ${page_pascal_case}State(
       pageStatus: pageStatus ?? this.pageStatus,
+      finishWithErrorMsg: finishWithErrorMsg ?? this.finishWithErrorMsg,
     );
   }
 
   @override
-  BaseState pageStatusCopyWith(PageStatus pageStatus) =>
-      copyWith(pageStatus: pageStatus);
+    BaseState baseCopyWith({
+      PageStatus? pageStatus,
+      String? finishWithErrorMsg,
+    }) =>
+        copyWith(pageStatus: pageStatus, finishWithErrorMsg: finishWithErrorMsg);
 }
