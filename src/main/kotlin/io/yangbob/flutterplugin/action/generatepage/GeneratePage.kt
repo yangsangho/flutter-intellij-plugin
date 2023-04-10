@@ -1,4 +1,4 @@
-package io.yangbob.flutterplugin.action
+package io.yangbob.flutterplugin.action.generatepage
 
 import com.fleshgrinder.extensions.kotlin.toLowerSnakeCase
 import com.intellij.openapi.actionSystem.*

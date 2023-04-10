@@ -1,6 +1,6 @@
-import 'package:chk_design_system/chk_design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:monong_ui/monong_ui.dart';
 
 import '../${page_snake_case}.dart';
 
@@ -11,8 +11,8 @@ class ${page_pascal_case}Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => ${page_pascal_case}Bloc(),
-      child: const Scaffold(
-        appBar: ChkFixedAppBar(title: ''),
+      child: Scaffold(
+        appBar: const MonongAppBar(title: ''),
         body: ${page_pascal_case}View(),
       ),
     );

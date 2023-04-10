@@ -1,0 +1,17 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part '${page_snake_case}.dart';
+
+@JsonSerializable()
+class ${page_pascal_case} {
+  final String example;
+
+  const ${page_pascal_case}({
+    required this.example,
+  });
+
+  factory ${page_pascal_case}.fromJson(Map<String, dynamic> json) =>
+      _$${page_pascal_case}FromJson(json);
+
+  Map<String, dynamic> toJson() => _$${page_pascal_case}ToJson(this);
+}

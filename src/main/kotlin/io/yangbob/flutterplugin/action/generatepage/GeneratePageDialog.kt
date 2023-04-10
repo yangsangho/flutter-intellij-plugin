@@ -1,4 +1,4 @@
-package io.yangbob.flutterplugin.action
+package io.yangbob.flutterplugin.action.generatepage
 
 import com.intellij.openapi.ui.DialogWrapper
 import com.intellij.ui.dsl.builder.bindSelected

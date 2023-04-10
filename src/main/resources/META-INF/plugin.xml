@@ -30,10 +30,18 @@
     </extensions>
     <actions>
         <action id="GeneratePageId"
-                class="io.yangbob.flutterplugin.action.GeneratePage"
+                class="io.yangbob.flutterplugin.action.generatepage.GeneratePage"
                 text="Generate Page"
                 icon="/icons/generate_page.png"
                 description="Generate a new Page">
+            <add-to-group group-id="NewGroup" anchor="first"/>
+        </action>
+
+        <action id="GenerateModelId"
+                class="io.yangbob.flutterplugin.action.generatemodel.GenerateJsonDto"
+                text="Generate JSON DTO"
+                icon="/icons/generate_page.png"
+                description="Generate a new Json Dto">
             <add-to-group group-id="NewGroup" anchor="first"/>
         </action>
     </actions>
