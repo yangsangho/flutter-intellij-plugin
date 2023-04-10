@@ -11,8 +11,8 @@ class ${page_pascal_case}Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => ${page_pascal_case}Bloc(),
-      child: Scaffold(
-        appBar: const MonongAppBar(title: ''),
+      child: const Scaffold(
+        appBar: MonongAppBar(title: ''),
         body: ${page_pascal_case}View(),
       ),
     );

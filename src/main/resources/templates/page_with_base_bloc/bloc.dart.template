@@ -1,6 +1,6 @@
-import 'package:checkcheck/app/base_bloc/base_bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:monong/base_bloc/base_bloc.dart';
 
 part '${page_snake_case}_event.dart';
 part '${page_snake_case}_state.dart';

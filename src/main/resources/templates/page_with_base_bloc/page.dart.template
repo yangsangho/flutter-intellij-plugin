@@ -1,9 +1,9 @@
-import 'package:checkcheck/app/base_bloc/bloc_progress.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:monong/base_bloc/bloc_progress.dart';
 import 'package:monong_ui/monong_ui.dart';
 
-import '../${page_snake_case}.g.dart';
+import '../${page_snake_case}.dart';
 
 class ${page_pascal_case}Page extends StatelessWidget {
   const ${page_pascal_case}Page({super.key});
@@ -13,8 +13,8 @@ class ${page_pascal_case}Page extends StatelessWidget {
     return BlocProvider(
       create: (context) => ${page_pascal_case}Bloc(),
       child: BlocProgress<${page_pascal_case}Bloc, ${page_pascal_case}State, ${page_pascal_case}Event>(
-        builder: (context, state) => Scaffold(
-          appBar: const MonongAppBar(title: ''),
+        builder: (context, state) => const Scaffold(
+          appBar: MonongAppBar(title: ''),
           body: ${page_pascal_case}View(),
         ),
       ),

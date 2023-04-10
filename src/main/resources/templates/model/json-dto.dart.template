@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part '${page_snake_case}.dart';
+part '${page_snake_case}.g.dart';
 
 @JsonSerializable()
 class ${page_pascal_case} {
