@@ -1,6 +1,6 @@
 package io.yangbob.flutterplugin.action.generatepage
 
-import com.fleshgrinder.extensions.kotlin.toLowerSnakeCase
+import io.yangbob.flutterplugin.common.toLowerSnakeCase
 import com.intellij.openapi.actionSystem.*
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.command.CommandProcessor
@@ -9,6 +9,7 @@ import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiDocumentManager
 import com.intellij.psi.PsiFileFactory
+import io.yangbob.flutterplugin.common.Utils
 import io.yangbob.flutterplugin.generator.BasePageGenerator
 import io.yangbob.flutterplugin.generator.PageGeneratorFactory
 
@@ -23,7 +24,9 @@ class GeneratePage : AnAction(), GeneratePageDialog.Listener {
     override fun onGeneratePageClicked(pageName: String?, shouldUseBaseBloc: Boolean) {
         pageName?.let { name ->
             val generators = PageGeneratorFactory.getPageGenerators(name, shouldUseBaseBloc)
-            generate(name, generators)
+            ApplicationManager.getApplication().runWriteAction {
+                generate(name, generators)
+            }
         }
     }
 
@@ -41,7 +44,7 @@ class GeneratePage : AnAction(), GeneratePageDialog.Listener {
         val directory = view?.orChooseDirectory
         if (project == null || directory == null) return
 
-        val baseDir = createDir(name.toLowerSnakeCase(), directory)
+        val baseDir = Utils.createDir(name.toLowerSnakeCase(), directory)
         ApplicationManager.getApplication().runWriteAction {
             CommandProcessor.getInstance().executeCommand(
                 project, {
@@ -51,8 +54,10 @@ class GeneratePage : AnAction(), GeneratePageDialog.Listener {
         }
     }
 
-    private fun createSourceFile(project: Project, generator: BasePageGenerator, directory: PsiDirectory) {
-        val dir = createDir(generator.dirName(), directory)
+    private fun createSourceFile(
+        project: Project, generator: BasePageGenerator, directory: PsiDirectory
+    ) {
+        val dir = Utils.createDir(generator.dirName(), directory)
 
         val fileName = generator.fileName()
         val existingPsiFile = dir.findFile(fileName)
@@ -65,8 +70,4 @@ class GeneratePage : AnAction(), GeneratePageDialog.Listener {
             document?.insertString(document.textLength, "\n" + generator.generate())
         }
     }
-
-    private fun createDir(dirName: String, directory: PsiDirectory): PsiDirectory =
-        if (dirName.isBlank()) directory
-        else directory.findSubdirectory(dirName) ?: directory.createSubdirectory(dirName)
 }

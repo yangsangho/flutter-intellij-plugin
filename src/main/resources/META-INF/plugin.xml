@@ -22,6 +22,7 @@
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
 
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
@@ -29,20 +30,16 @@
 
     </extensions>
     <actions>
-        <action id="GeneratePageId"
-                class="io.yangbob.flutterplugin.action.generatepage.GeneratePage"
-                text="Generate Page"
-                icon="/icons/generate_page.png"
-                description="Generate a new Page">
-            <add-to-group group-id="NewGroup" anchor="first"/>
+        <action class="io.yangbob.flutterplugin.action.generatepage.GeneratePage"
+            description="Generate a new Page" icon="/icons/generate_page.png" id="GeneratePageId"
+            text="Generate Page">
+            <add-to-group anchor="first" group-id="NewGroup" />
         </action>
 
-        <action id="GenerateModelId"
-                class="io.yangbob.flutterplugin.action.generatemodel.GenerateJsonDto"
-                text="Generate JSON DTO"
-                icon="/icons/generate_page.png"
-                description="Generate a new Json Dto">
-            <add-to-group group-id="NewGroup" anchor="first"/>
+        <action class="io.yangbob.flutterplugin.action.generatemodel.GenerateModel"
+            description="Generate a new Model" icon="/icons/generate_page.png" id="GenerateModelId"
+            text="Generate Model">
+            <add-to-group anchor="first" group-id="NewGroup" />
         </action>
     </actions>
 </idea-plugin>

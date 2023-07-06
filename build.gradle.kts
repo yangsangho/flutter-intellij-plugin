@@ -14,7 +14,8 @@ repositories {
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.7.21")
-    implementation("com.fleshgrinder.kotlin:case-format:0.2.0")
+    // NoClassDefFoundError... 때문에 ㅠ
+//    implementation("com.fleshgrinder.kotlin:case-format:0.2.0")
 }
 
 // Configure Gradle IntelliJ Plugin

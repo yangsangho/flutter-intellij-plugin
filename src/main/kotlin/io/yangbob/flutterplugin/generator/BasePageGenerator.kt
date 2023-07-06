@@ -1,7 +1,7 @@
 package io.yangbob.flutterplugin.generator
 
-import com.fleshgrinder.extensions.kotlin.toLowerSnakeCase
-import com.fleshgrinder.extensions.kotlin.toUpperCamelCase
+import io.yangbob.flutterplugin.common.toLowerSnakeCase
+import io.yangbob.flutterplugin.common.toUpperCamelCase
 import com.google.common.io.CharStreams
 import org.apache.commons.lang.text.StrSubstitutor
 import java.io.InputStreamReader

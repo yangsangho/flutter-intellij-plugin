@@ -1,12 +1,12 @@
 package io.yangbob.flutterplugin.generator
 
-import com.fleshgrinder.extensions.kotlin.toLowerSnakeCase
-import com.fleshgrinder.extensions.kotlin.toUpperCamelCase
 import com.google.common.io.CharStreams
+import io.yangbob.flutterplugin.common.toLowerSnakeCase
+import io.yangbob.flutterplugin.common.toUpperCamelCase
 import org.apache.commons.lang.text.StrSubstitutor
 import java.io.InputStreamReader
 
-class JsonDtoGenerator(private val name: String) {
+class ModelGenerator(private val name: String) {
     private val templatePagePascalCase = "page_pascal_case"
     private val templatePageSnakeCase = "page_snake_case"
 
@@ -18,9 +18,10 @@ class JsonDtoGenerator(private val name: String) {
             templatePagePascalCase to pascalCase(), templatePageSnakeCase to snakeCase()
         )
         try {
-            val resource = "/templates/model/json-dto.dart.template"
-            val resourceAsStream = JsonDtoGenerator::class.java.getResourceAsStream(resource)
-            templateString = CharStreams.toString(InputStreamReader(resourceAsStream!!, Charsets.UTF_8))
+            val resource = "/templates/model/model.dart.template"
+            val resourceAsStream = ModelGenerator::class.java.getResourceAsStream(resource)
+            templateString =
+                CharStreams.toString(InputStreamReader(resourceAsStream!!, Charsets.UTF_8))
         } catch (e: Exception) {
             throw RuntimeException(e)
         }
@@ -28,7 +29,7 @@ class JsonDtoGenerator(private val name: String) {
 
     private fun pascalCase(): String = name.toUpperCamelCase()
 
-    private fun snakeCase() = name.toLowerSnakeCase()
+    private fun snakeCase(): String = name.toLowerSnakeCase()
 
     fun generate(): String {
         val substitutor = StrSubstitutor(templateValues).apply {

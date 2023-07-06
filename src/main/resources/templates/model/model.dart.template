@@ -1,0 +1,14 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part '${page_snake_case}.freezed.dart';
+part '${page_snake_case}.g.dart';
+
+@freezed
+class ${page_pascal_case} with _$${page_pascal_case} {
+  factory ${page_pascal_case}({
+    required String example,
+  }) = _${page_pascal_case};
+
+  factory ${page_pascal_case}.fromJson(Map<String, dynamic> json) =>
+      _$${page_pascal_case}FromJson(json);
+}
